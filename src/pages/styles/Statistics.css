@@ -1,0 +1,81 @@
+.statistics-page {
+	min-height: calc(100vh - 120px);
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	padding: 3rem 1rem;
+	background-color: #0f0f0f;
+}
+
+.statistics-container {
+	width: 100%;
+	max-width: 1000px;
+}
+
+.statistics-card {
+    background: linear-gradient(180deg, #1a1a1a 0%, #171717 100%);
+	border: 1px solid #2a2a2a;
+	border-radius: 10px;
+	padding: 2rem;
+	box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+}
+
+.statistics-header {
+	margin-bottom: 1rem;
+}
+
+.statistics-header h2 {
+	text-align: center;
+	margin: 0;
+	color: #4CAF50;
+}
+
+.statistics-header p {
+	margin: 0.25rem 0 0 0;
+	color: #ddd;
+}
+
+.statistics-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(220px, 1fr));
+	gap: 1rem;
+}
+
+.statistics-tile {
+	background: #141414;
+	border: 1px solid #262626;
+	padding: 0.85rem;
+	border-radius: 8px;
+}
+
+.statistics-tile .title {
+	font-size: 0.95rem;
+	color: #cbd5c6;
+}
+
+.statistics-tile .value {
+	font-size: 1.8rem;
+	font-weight: 700;
+	color: #e6ffef;
+	margin-top: 0.2rem;
+}
+
+.statistics-tile .sub {
+	color: #9aa69a;
+	font-size: 0.85rem;
+	margin-top: 0.4rem;
+}
+
+.statistics-progress {
+	margin-top: 0.6rem;
+	background: #1f1f1f;
+	height: 10px;
+	border-radius: 6px;
+	overflow: hidden;
+}
+
+.statistics-progress .fill {
+	height: 100%;
+	background: #16a34a;
+	transition: width 0.35s ease;
+}

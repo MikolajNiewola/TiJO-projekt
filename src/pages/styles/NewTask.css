@@ -1,0 +1,206 @@
+.new-task-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+    background-color: #121212;
+    padding: 2rem;
+}
+
+.new-task-card {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.new-task-card h2 {
+    color: #4CAF50;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #242424;
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+    margin-top: 0.5rem;
+}
+
+.radio-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    color: #ffffff;
+    user-select: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    transition: background-color 0.12s ease, color 0.12s ease, transform 0.12s ease;
+}
+
+.radio-option input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #666;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    background-clip: content-box;
+}
+
+.radio-option input[type="radio"][value="low"]:checked {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 4px rgba(76,175,80,0.08);
+}
+.radio-option input[type="radio"][value="medium"]:checked {
+    background-color: #ffbb33;
+    border-color: #ffbb33;
+    box-shadow: 0 0 0 4px rgba(255,187,51,0.08);
+}
+.radio-option input[type="radio"][value="high"]:checked {
+    background-color: #ff4444;
+    border-color: #ff4444;
+    box-shadow: 0 0 0 4px rgba(255,68,68,0.08);;
+}
+
+.radio-option input[type="radio"][value="low"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(76,175,80,0.12);
+}
+.radio-option input[type="radio"][value="medium"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(255,187,51,0.12);
+}
+.radio-option input[type="radio"][value="high"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(255,68,68,0.12);
+}
+
+.radio-option input[type="radio"][value="low"]:checked + span {
+    color: #4CAF50;
+    background: rgba(76,175,80,0.06);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+.radio-option input[type="radio"][value="medium"]:checked + span {
+    color: #ffbb33;
+    background: rgba(255,187,51,0.06);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+.radio-option input[type="radio"][value="high"]:checked + span {
+    color: #ff4444;
+    background: rgba(255,68,68,0.06);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.radio-option:hover {
+    transform: translateX(2px);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 2px rgba(75, 175, 75, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #666;
+}
+
+.form-info {
+    background-color: #242424;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    color: #ccc;
+}
+
+.form-info p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-submit,
+.btn-cancel {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-submit {
+    background-color: #4CAF50;
+    color: #ffffff;
+}
+
+.btn-submit:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+.btn-cancel {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #333;
+}
+
+.btn-cancel:hover {
+    border-color: #4CAF50;
+    color: #4CAF50;
+}

@@ -1,0 +1,93 @@
+.card {
+    background-color: #1a1a1a !important;
+    border: 1px solid #333 !important;
+    color: #ffffff !important;
+    width: 18rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(75, 175, 75, 0.2);
+}
+
+.card-header {
+    background-color: #242424 !important;
+    border-bottom: 1px solid #333 !important;
+    padding: 1rem;
+}
+
+.card-header p {
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.card-header button {
+    background: transparent;
+    border: none;
+    color: #4CAF50;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.card-header button:hover {
+    color: #65d668;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    color: #4CAF50;
+    margin-bottom: 0.75rem;
+}
+
+.card-subtitle {
+    color: #888 !important;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.card-footer {
+    background-color: #242424 !important;
+    border-top: 1px solid #333 !important;
+    color: #888 !important;
+    font-size: 0.85rem;
+    padding: 0.75rem 1rem;
+}
+
+.card[data-priority="high"] {
+    border-left: 3px solid #ff4444 !important;
+}
+
+.card[data-priority="medium"] {
+    border-left: 3px solid #ffbb33 !important;
+}
+
+.card[data-priority="low"] {
+    border-left: 3px solid #4CAF50 !important;
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.status-pending {
+    background-color: rgba(255, 187, 51, 0.2);
+    color: #ffbb33;
+}
+
+.status-done {
+    background-color: rgba(75, 175, 75, 0.2);
+    color: #4CAF50;
+}

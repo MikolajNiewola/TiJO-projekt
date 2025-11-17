@@ -1,0 +1,100 @@
+.navbar {
+    background-color: #1a1a1a;
+    padding: 1rem 0;
+    border-bottom: 1px solid #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 60px;
+}
+
+body {
+    padding-top: 60px;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+}
+
+.nav-links li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #4CAF50;
+}
+
+.nav-links li a.active {
+    color: #4CAF50;
+    border-bottom: 2px solid #4CAF50;
+}
+
+.login-item {
+    margin-left: auto;
+}
+
+.login-item a {
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.login-item svg {
+    font-size: 1rem;
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-email {
+    color: #4CAF50;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logout-button {
+    background-color: transparent;
+    border: 1px solid #ef4444;
+    color: #ef4444;
+    padding: 0.35rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+    border-color: #ff6b6b;
+    color: #ff6b6b;
+}
+
+

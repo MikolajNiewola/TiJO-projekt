@@ -1,0 +1,145 @@
+.task-list-header {
+    max-width: 1200px;
+    margin: 0 auto 2rem auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+
+.filter-sort-container {
+    display: flex;
+    gap: 1rem;
+    position: relative;
+}
+
+.filter-container, .sort-container {
+    position: relative;
+}
+
+.filter-menu, .sort-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0.5rem;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 1rem;
+    z-index: 1000;
+    min-width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sort-menu button {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    padding: 0.5rem;
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.sort-menu button:hover {
+    color: #4CAF50;
+}
+
+.filter-section {
+    margin-bottom: 1rem;
+}
+
+.filter-section h4 {
+    color: #4CAF50;
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ffffff;
+    padding: 0.25rem 0;
+    cursor: pointer;
+}
+
+.filter-option input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.filter-button, .sort-button {
+    background-color: transparent;
+    border: 1px solid #333;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.filter-button:hover, .sort-button:hover {
+    border-color: #4CAF50;
+    color: #4CAF50;
+}
+
+.sort-indicator {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 0.5rem;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.sort-indicator svg {
+    margin-left: 0.25rem;
+    font-size: 0.85rem;
+}
+
+.add-task-button {
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.add-task-button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+.add-task-button svg {
+    font-size: 1rem;
+}
+
+.task-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.task-list-header {
+    border: 1px solid #333;
+    border-radius: 2rem;
+    background-color: #242424;
+    padding: 1rem 2rem;
+    margin: 2rem auto;  
+    max-width: 1200px;
+}

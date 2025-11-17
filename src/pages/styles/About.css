@@ -1,0 +1,30 @@
+.about-page {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3rem 1rem;
+  background-color: #0f0f0f;
+}
+
+.about-card {
+  width: 100%;
+  max-width: 900px;
+  background: linear-gradient(180deg, #1a1a1a 0%, #171717 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+}
+
+.about-card h1 {
+  text-align: center;
+  margin-top: 0;
+  color: #4CAF50;
+}
+
+.about-card p {
+  text-align: center;
+  color: #ddd;
+  line-height: 1.6;
+}
