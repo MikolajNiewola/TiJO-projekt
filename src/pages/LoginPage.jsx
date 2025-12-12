@@ -1,10 +1,13 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
 import './styles/LoginPage.css';
 
 function LoginPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+
+    const navigate = useNavigate();
 
     const validateEmail = (email) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -37,7 +40,7 @@ function LoginPage() {
         }
 
         localStorage.setItem('userEmail', email);
-        window.location.assign('/');
+        navigate('/');
     };
 
     return (

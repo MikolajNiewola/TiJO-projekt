@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router';
 import './styles/NewTask.css';
 
 function EditTask() {
@@ -137,13 +137,7 @@ function EditTask() {
                     </div>
                     <div className="form-buttons">
                         <button type="submit" className="btn-submit">Save Changes</button>
-                        <button 
-                            type="button" 
-                            className="btn-cancel"
-                            onClick={() => navigate('/')}
-                        >
-                            Cancel
-                        </button>
+                        <button type="button" className="btn-cancel" onClick={() => navigate('/')}>Cancel</button>
                     </div>
                 </form>
             </div>

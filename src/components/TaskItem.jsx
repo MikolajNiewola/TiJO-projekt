@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashCan, faPenToSquare, faSquareCheck, faSquareXmark } from '@fortawesome/free-solid-svg-icons'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import './styles/TaskItem.css';
 
 function TaskItem({ id, title, priority, status, description, dateAdded, timeAdded, onDelete, onComplete }) {

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import TaskItem from './TaskItem';
 import './styles/TaskList.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faFilter, faSort, faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 

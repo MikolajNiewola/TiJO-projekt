@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect } from 'react';
@@ -40,7 +40,7 @@ function Navbar() {
                         {userEmail ? (
                             <div className="user-section">
                                 <span className="user-email"><FontAwesomeIcon icon={faUser} /> {userEmail}</span>
-                                <button onClick={handleLogout} className="logout-button"><FontAwesomeIcon icon={faSignOutAlt} /> Logout</button>
+                                <button onClick={handleLogout} className="logout-button"><FontAwesomeIcon icon={faSignOutAlt} />Logout</button>
                             </div>
                         ) : (
                             <NavLink to="/login" className={({ isActive }) => isActive ? 'active' : ''}> <FontAwesomeIcon icon={faUser} /> Login </NavLink>
