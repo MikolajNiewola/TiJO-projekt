@@ -3,10 +3,27 @@ import { useNavigate } from 'react-router';
 import './styles/NewTask.css';
 
 
-const countId = () => {
+// export const countId = () => {
+//     const storedTasks = localStorage.getItem('tasks');
+//     const tasks = storedTasks ? JSON.parse(storedTasks) : [];
+//     return tasks.length + 1;
+// }
+
+export const countId = () => {
     const storedTasks = localStorage.getItem('tasks');
     const tasks = storedTasks ? JSON.parse(storedTasks) : [];
-    return tasks.length + 1;
+    if (tasks.length === 0) {
+        return 1;
+    } else {
+        const ids = tasks.map(task => task.id);
+
+        let nextId = 1;
+        while (ids.includes(nextId)) {
+            nextId++;
+        }
+
+        return nextId;
+    }
 }
 
 function NewTask() {

@@ -5,15 +5,45 @@ import { NavLink } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faFilter, faSort, faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
-function TaskList() {
-    const [allTasks, setAllTasks] = useState(() => {
+export const sortArray = (arr, type, direction = 'desc') => {
+    const copy = arr.slice();
+    if (!type) return copy;
+
+    if (type === 'status') {
+        copy.sort((a, b) => {
+            const aDone = a.status === 'done' ? 1 : 0;
+            const bDone = b.status === 'done' ? 1 : 0;
+            return direction === 'desc' ? bDone - aDone : aDone - bDone;
+        });
+    } else if (type === 'priority') {
+        const priorityOrder = { high: 3, medium: 2, low: 1 };
+        copy.sort((a, b) => {
+            return direction === 'desc'
+                ? priorityOrder[b.priority] - priorityOrder[a.priority]
+                : priorityOrder[a.priority] - priorityOrder[b.priority];
+        });
+    } else if (type === 'date') {
+        copy.sort((a, b) => {
+            const aTs = new Date(`${a.dateAdded}T${a.timeAdded || '00:00'}`).getTime();
+            const bTs = new Date(`${b.dateAdded}T${b.timeAdded || '00:00'}`).getTime();
+            return direction === 'desc' ? bTs - aTs : aTs - bTs;
+        });
+    }
+
+    return copy;
+};
+
+export const loadTasksFromStorage = () => {
         try {
             const stored = localStorage.getItem('tasks');
             return stored ? JSON.parse(stored) : [];
         } catch (e) {
             return [];
         }
-    });
+}
+
+function TaskList() {
+    const [allTasks, setAllTasks] = useState(loadTasksFromStorage);
     const [displayedTasks, setDisplayedTasks] = useState(allTasks);
 
     const [showFilterMenu, setShowFilterMenu] = useState(false);
@@ -64,34 +94,6 @@ function TaskList() {
         });
     };
 
-    const sortArray = (arr, type, direction = 'desc') => {
-        const copy = arr.slice();
-        if (!type) return copy;
-
-        if (type === 'status') {
-            copy.sort((a, b) => {
-                const aDone = a.status === 'done' ? 1 : 0;
-                const bDone = b.status === 'done' ? 1 : 0;
-                return direction === 'desc' ? bDone - aDone : aDone - bDone;
-            });
-        } else if (type === 'priority') {
-            const priorityOrder = { high: 3, medium: 2, low: 1 };
-            copy.sort((a, b) => {
-                return direction === 'desc'
-                    ? priorityOrder[b.priority] - priorityOrder[a.priority]
-                    : priorityOrder[a.priority] - priorityOrder[b.priority];
-            });
-        } else if (type === 'date') {
-            copy.sort((a, b) => {
-                const aTs = new Date(`${a.dateAdded}T${a.timeAdded || '00:00'}`).getTime();
-                const bTs = new Date(`${b.dateAdded}T${b.timeAdded || '00:00'}`).getTime();
-                return direction === 'desc' ? bTs - aTs : aTs - bTs;
-            });
-        }
-
-        return copy;
-    };
-
     const handleSort = (type) => {
         let direction = 'desc';
         if (sortState.type === type) {
@@ -103,14 +105,12 @@ function TaskList() {
         setSortState({ type, direction });
         setShowSortMenu(false);
     };
-
     
-
-    const handleDeleteTask = (taskId) => {
-        setAllTasks(prev => prev.filter(t => t.id !== taskId));
-    };
-
-    const handleCompleteTask = (taskId) => {
+    const handleDeleteTask = (taskId) => { 
+        setAllTasks(prev => prev.filter(t => t.id !== taskId)); 
+    }; 
+    
+    const handleCompleteTask = (taskId) => { 
         setAllTasks(prev => prev.map(t => t.id === taskId ? { ...t, status: t.status === 'done' ? 'pending' : 'done' } : t));
     };
 

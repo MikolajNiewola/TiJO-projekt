@@ -9,7 +9,7 @@ function Statistics() {
         try {
             const stored = localStorage.getItem('tasks');
             const parsed = stored ? JSON.parse(stored) : [];
-            setTasks(parsed || []);
+            setTasks(parsed);
         } catch (e) {
             console.error('Failed to load tasks from localStorage:', e);
             setTasks([]);
@@ -20,14 +20,14 @@ function Statistics() {
     
     let high = 0, medium = 0, low = 0;
     tasks.forEach(t => {
-        const p = t.priority.toLowerCase();
+        const p = t.priority;
         if (p === "high") high++;
         else if (p === "medium") medium++;
         else if (p === "low") low++;
     });
 
     const byPriority = { high, medium, low };
-    const doneCount = tasks.filter(t => (t.status || '').toLowerCase() === 'done').length;
+    const doneCount = tasks.filter(t => (t.status || '') === 'done').length;
     const pendingCount = total - doneCount;
     const percentDone = Math.round((doneCount / total) * 100);
 

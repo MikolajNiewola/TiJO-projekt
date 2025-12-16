@@ -2,23 +2,23 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import './styles/LoginPage.css';
 
+export const validateEmail = (email) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
+export const validatePassword = (password) => {
+    const hasUpperCase = /[A-Z]/.test(password);
+    const hasNumberOrSpecial = /[\d!@#$%^&*()_+=\-[\]{};':"\\|,.<>?]/.test(password);
+    return hasUpperCase && hasNumberOrSpecial;
+};
+
 function LoginPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
     const navigate = useNavigate();
-
-    const validateEmail = (email) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    };
-
-    const validatePassword = (password) => {
-        const hasUpperCase = /[A-Z]/.test(password);
-        const hasNumberOrSpecial = /[\d!@#$%^&*()_+=\-[\]{};':"\\|,.<>?]/.test(password);
-        return hasUpperCase && hasNumberOrSpecial;
-    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -40,6 +40,7 @@ function LoginPage() {
         }
 
         localStorage.setItem('userEmail', email);
+        window.dispatchEvent(new Event('login'));
         navigate('/');
     };
 

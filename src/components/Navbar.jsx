@@ -8,9 +8,19 @@ import './styles/Navbar.css';
 function Navbar() {
     const [userEmail, setUserEmail] = useState(null);
 
-    useEffect(() => {
+    const handleLogin = () => {
         const email = localStorage.getItem('userEmail');
         setUserEmail(email);
+    };
+
+    useEffect(() => {
+        window.addEventListener('login', handleLogin);
+        
+        handleLogin();
+
+        return () => { 
+            window.removeEventListener('login', handleLogin); 
+        };
     }, []);
 
     const handleLogout = () => {
@@ -33,7 +43,7 @@ function Navbar() {
                             <NavLink to="/statistics" className={({ isActive }) => isActive ? 'active' : ''}> Statistics </NavLink>
                         </li>
                     )}
-                    <li>
+                    <li>    
                         <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''}> About </NavLink>
                     </li>
                     <li className="login-item">
