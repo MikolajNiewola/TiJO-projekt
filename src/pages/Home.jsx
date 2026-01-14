@@ -1,6 +1,6 @@
 import TaskList from '../components/TaskList';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import './styles/Home.css';
 
 

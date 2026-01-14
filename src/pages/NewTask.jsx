@@ -1,13 +1,6 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import './styles/NewTask.css';
-
-
-// export const countId = () => {
-//     const storedTasks = localStorage.getItem('tasks');
-//     const tasks = storedTasks ? JSON.parse(storedTasks) : [];
-//     return tasks.length + 1;
-// }
 
 export const countId = () => {
     const storedTasks = localStorage.getItem('tasks');
